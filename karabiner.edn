@@ -1,0 +1,69 @@
+{:profiles
+ {:Default
+  {:alone              500
+   :default            true
+   :delay              200
+   :held               500
+   :sim                200
+   :simlayer-threshold 220}}
+  
+  :simlayers { :number_mode {:key :left_control}}
+
+ :main
+ [;; ------------ Remaps ------------
+
+  {:des "Change backslash to delete" :rules[[:##backslash :delete_or_backspace]]}
+
+ ;; ------------ Launchers ------------
+
+ {:des "Open  iTerm" :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
+ {:des "Open  Chrome" :rules [[:!CTOc "open -a 'Google Chrome.app'"]]}
+ {:des "Open  Global Protect" :rules [[:!CTOg "open -a 'GlobalProtect.app'"]]}
+ {:des "Open  Remote Desktop" :rules [[:!CTOr "open -a 'Microsoft Remote Desktop.app'"]]}
+ {:des "Open  Visual Studio Code" :rules [[:!CTOv "open -a 'Visual Studio Code.app'"]]}
+ {:des "Open  WhatsApp" :rules [[:!CTOw "open -a 'WhatsApp.app'"]]}
+ {:des "Open  Notion" :rules [[:!CTOn "open -a 'Notion.app'"]]}
+
+ ;; ----------- Modifiers --------------
+
+ {:des "Change left option to left command" :rules[[:##left_option :left_command]]}
+ {:des "Change left command to left option" :rules[[:##left_command :left_option]]}
+ {:des "Change caps lock to fn" :rules[[:##caps_lock :fn]]}
+ {:des "FN + H/J/k/L" :rules[[:!Fk :up_arrow][:!Fj :down_arrow][:!Fh :left_arrow][:!Fl :right_arrow]]}
+ {:des "Numpad" :rules [:number_mode 
+                            [:r :0]
+                            [:z :1]
+                            [:x :2]
+                            [:c :3]
+                            [:a :4]
+                            [:s :5]
+                            [:d :6]
+                            [:q :7]
+                            [:w :8]
+                            [:e :9]
+                            ]}
+  
+
+ ;; ------------ Cheatsheet -----5------
+ ;; !  stand for mandatory
+ ;; #  stand for optional
+ ;; !! stand for mandatory command + control + optional + shift (hyper)
+ ;; ## stand for optional any
+ ;; C T O S for left command control option shift
+ ;; Q W E R for right command control option shift
+ ;; F for fn
+ ;; need to prefix C T O S F Q W E R with ! or #
+   ]
+ :cheatsheet
+ {:!Ca        "command a"
+  :!Ta        "control a"
+  :!Oa        "option a"
+  :!Sa        "shift a"
+  :#Sa        "shift a"
+  :!CTOa      "command control option a"
+  :!Cspacebar "command space"
+  :!Fa        "fn a"
+  :##a        "keycode a optional any"
+  :!!a        "mandatory hyper (control command option shift) a "
+  :template   {:des   "Description of your action"
+               :rules [[:!Cspacebar "command to execute"]]}}}
